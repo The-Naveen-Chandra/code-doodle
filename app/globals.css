@@ -7,8 +7,16 @@ body {
   color: #848484;
 }
 
+.code-editor .code-title {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 2px solid rgba(249, 249, 249, 0.08);
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
 .ace-editor-container {
-  width: 100%;
+  width: 100% !important;
 }
 
 .ace_scrollbar {
