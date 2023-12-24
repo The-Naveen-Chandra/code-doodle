@@ -21,6 +21,8 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-terminal";
 
 import Image from "next/image";
+import ThemeSelector from "./ThemeSelector";
+import BackgroundSelector from "./BackgroundSelector";
 
 interface CodeEditorProps {
   onCodeChange: (code: string) => void;
