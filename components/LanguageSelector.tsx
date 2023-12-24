@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { languages } from "@/utils/utilities";
 
 interface LanguageSelectorProps {
@@ -17,10 +17,27 @@ function LanguageSelector({
 }: LanguageSelectorProps) {
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // Toggle dropdown
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
+  // Close dropdown when clicking outside
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // handle language change and set active icon
   const handleLanguageChange = (newLanguage: string) => {
     setLanguage(newLanguage);
     const newActiveIcon = languages.find(
@@ -33,20 +50,22 @@ function LanguageSelector({
   };
 
   return (
-    <div onClick={toggleDropdown}>
+    <div ref={dropdownRef} onClick={toggleDropdown}>
       <p className="py-[5px] text-sm font-medium">Language</p>
       <div className="dropdown-title capitalize w-[120px]">
         {language}
-        <ChevronDown />
+        <div className={`chevron ${showDropdown ? "up" : "down"}`}>
+          <ChevronDown />
+        </div>
       </div>
 
       {showDropdown && (
-        <div className="dropdown-menu w-[120px] top-[94px] ">
+        <div className="dropdown-menu w-[120px] top-[94px] p-1">
           {languages.map((lang, index) => {
             return (
               <div key={index}>
                 <button
-                  className="dropdown-item capitalize text-left"
+                  className="dropdown-item capitalize text-left w-full px-1.5 py-0.5"
                   onClick={() => handleLanguageChange(lang.name)}
                 >
                   {lang.name}

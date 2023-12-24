@@ -48,7 +48,7 @@ body {
 .dropdown-title {
   padding: 0.25rem 0.3rem 0.3rem 0.5rem;
   height: 37px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid rgba(249, 249, 249, 0.08);
 
   font-size: 0.9rem;
@@ -59,15 +59,36 @@ body {
 }
 
 .dropdown-menu {
-  padding: 0.25rem 0 0.4rem 0.5rem;
+  /* padding: 0.25rem 0 0.4rem 0.5rem; */
+  /* padding: 0.25rem; */
   position: absolute;
 
   background-color: #191919;
   border: 1px solid #3c3c3c;
-  border-radius: 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-/* on hover change the color 
-.dropdown-item:hover {
-  background-color: #3c3c3c;
+/* .dropdown-item {
+  width: 100%;
+  padding: 1px 4px 1px 4px;
 } */
+
+.dropdown-item:hover {
+  background-color: #323235; /* Change this to your preferred color */
+  border-radius: 5px; /* Optional: to give the box rounded corners */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.chevron {
+  transition: transform 0.3s ease-in-out;
+}
+
+.chevron.up {
+  transform: rotate(180deg);
+}
+
+.chevron.down {
+  transform: rotate(0);
+}
