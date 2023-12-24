@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import CodeEditor from "@/components/CodeEditor";
-import { languages } from "@/utils/utilities";
+import { languages, themes } from "@/utils/utilities";
 import LanguageSelector from "@/components/LanguageSelector";
+import ThemeSelector from "@/components/ThemeSelector";
 
 export default function Home() {
   const [language, setLanguage] = useState(languages[0].name);
   const [activeIcon, setActiveIcon] = useState(languages[0].icon);
+  const [theme, setTheme] = useState(themes[0]);
 
   return (
     <main className="h-[100vh] flex flex-col items-center justify-between">
@@ -17,12 +19,14 @@ export default function Home() {
           setLanguage={setLanguage}
           setActiveIcon={setActiveIcon}
         />
+
+        <ThemeSelector theme={theme} setTheme={setTheme} />
       </header>
       <div className="code-editor-ref mt-[14rem]">
         <CodeEditor
           language={language}
           icon={activeIcon}
-          theme="monokai"
+          theme={theme}
           onCodeChange={() => {}}
         />
       </div>

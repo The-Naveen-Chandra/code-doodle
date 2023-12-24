@@ -15,11 +15,11 @@ import "ace-builds/src-noconflict/mode-c_cpp";
 
 // themes for ace editor
 import "ace-builds/src-noconflict/theme-monokai";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/theme-solarized_light";
 import "ace-builds/src-noconflict/theme-solarized_dark";
-import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/theme-tomorrow";
 import "ace-builds/src-noconflict/theme-twilight";
+import "ace-builds/src-noconflict/theme-terminal";
+
 import Image from "next/image";
 
 interface CodeEditorProps {
@@ -96,7 +96,7 @@ function CodeEditor({
           value="function() { return 'Hello World'; }"
           name="UNIQUE_ID_OF_DIV"
           fontSize={16}
-          theme="monokai"
+          theme={theme.toLowerCase()}
           mode={language.toLowerCase()}
           wrapEnabled={true}
           showGutter={false}

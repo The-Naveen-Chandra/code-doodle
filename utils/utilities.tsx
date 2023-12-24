@@ -7,3 +7,11 @@ export const languages = [
   { name: "html", icon: "icons/html.svg" },
   { name: "css", icon: "icons/css.svg" },
 ];
+
+export const themes = [
+  "monokai",
+  "solarized_Dark",
+  "tomorrow",
+  "twilight",
+  "terminal",
+];
