@@ -71,42 +71,52 @@ function CodeEditor({
       }}
       onResize={handleResize}
       className="resize-container relative"
+      style={{
+        background: background,
+      }}
     >
-      <div className="code-block">
-        <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
-          {/* three dots */}
-          <div className="dots flex items-center gap-1">
-            <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffbc6a]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#67f772]"></div>
-          </div>
+      <div>
+        <div
+          className="code-block"
+          style={{
+            padding: currentPadding,
+          }}
+        >
+          <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
+            {/* three dots */}
+            <div className="dots flex items-center gap-1">
+              <div className="w-3 h-3 rounded-full bg-[#ff5656]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffbc6a]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#67f772]"></div>
+            </div>
 
-          {/* input */}
-          <div className="input-control w-full">
-            <input
-              type="text"
-              className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-medium text-center bg-transparent"
-            />
-          </div>
+            {/* input */}
+            <div className="input-control w-full">
+              <input
+                type="text"
+                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-medium text-center bg-transparent"
+              />
+            </div>
 
-          {/* language icon */}
-          <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-30 rounded-sm ">
-            <Image src={icon} alt="language icon" width={20} height={20} />
+            {/* language icon */}
+            <div className="icon flex justify-center items-center p-1 bg-black bg-opacity-30 rounded-sm ">
+              <Image src={icon} alt="language icon" width={20} height={20} />
+            </div>
           </div>
+          <AceEditor
+            value="function() { return 'Hello World'; }"
+            name="UNIQUE_ID_OF_DIV"
+            fontSize={16}
+            theme={theme.toLowerCase()}
+            mode={language.toLowerCase()}
+            wrapEnabled={true}
+            showGutter={false}
+            showPrintMargin={false}
+            highlightActiveLine={false}
+            editorProps={{ $blockScrolling: true }}
+            className="ace-editor-container"
+          />
         </div>
-        <AceEditor
-          value="function() { return 'Hello World'; }"
-          name="UNIQUE_ID_OF_DIV"
-          fontSize={16}
-          theme={theme.toLowerCase()}
-          mode={language.toLowerCase()}
-          wrapEnabled={true}
-          showGutter={false}
-          showPrintMargin={false}
-          highlightActiveLine={false}
-          editorProps={{ $blockScrolling: true }}
-          className="ace-editor-container"
-        />
       </div>
     </Resizable>
   );

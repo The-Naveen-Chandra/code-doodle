@@ -17,10 +17,14 @@ export const themes = [
 ];
 
 export const backgrounds = [
-  "linear-gradient(to right, #ff9966, #ff5e62)",
-  "linear-gradient(to right, #00f260, #0575e6)",
-  "linear-gradient(to right, #e1eec3, #f05053)",
-  "linear-gradient(to right, #f2a0a1, #e0c3fc)",
-  "linear-gradient(to right, #3a7bd5, #3a6073)",
-  "linear-gradient(to right, #ff4b1f, #1fddff)",
+  "linear-gradient(354deg,#ff75b5,#ffb86c)",
+  "linear-gradient(140deg, rgb(255, 207, 115), rgb(255, 122, 47))",
+  "linear-gradient(90deg,#93f9b9,#1d976c)",
+  "linear-gradient(140deg, rgb(142, 199, 251), rgb(28, 85, 170))",
+  "linear-gradient(337deg,#654ea3,#da98b4)",
+  "#000",
+  "#fff",
+  "linear-gradient(270deg,#fc6767,#ec008c)",
+  "linear-gradient(140deg, rgb(165, 142, 251), rgb(233, 191, 248))",
+  "linear-gradient(270deg,#514a9d,#24c6dc)",
 ];
