@@ -7,12 +7,14 @@ body {
   color: #848484;
 }
 
-.code-editor .code-title {
+.code-title {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border: 2px solid rgba(249, 249, 249, 0.08);
+  /* border: 2px solid rgba(249, 249, 249, 0.08); */
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 2px solid rgba(249, 249, 249, 0.08);
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ace-editor-container {
@@ -27,9 +29,11 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  border-top: none;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(249, 249, 249, 0.08);
+
+  /* border: 2px solid rgba(249, 249, 249, 0.08); */
+  border-top: none;
+
   font-weight: 500 !important;
   font-size: 17px !important;
   line-height: 1.5rem !important;
@@ -56,6 +60,18 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+}
+
+.padding-selected {
+  border-radius: 5px;
+  border: 1px solid rgba(249, 249, 249, 0.08);
+}
+
+.padding-items:hover {
+  background-color: #323235; /* Change this to your preferred color */
+  border-radius: 5px; /* Optional: to give the box rounded corners */
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .dropdown-menu {
