@@ -14,18 +14,20 @@ import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/mode-c_cpp";
 
 // themes for ace editor
+import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-one_dark";
 import "ace-builds/src-noconflict/theme-solarized_dark";
-import "ace-builds/src-noconflict/theme-tomorrow";
-import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-terminal";
+import "ace-builds/src-noconflict/theme-twilight";
+import "ace-builds/src-noconflict/theme-tomorrow";
 
 import Image from "next/image";
 import ThemeSelector from "./ThemeSelector";
 import BackgroundSelector from "./BackgroundSelector";
+import { initialCode } from "@/utils/utilities";
 
 interface CodeEditorProps {
-  onCodeChange: (code: string) => void;
   language: string;
   theme: string;
   icon: string;
@@ -34,24 +36,29 @@ interface CodeEditorProps {
 }
 
 function CodeEditor({
-  onCodeChange,
   language,
   theme,
   icon,
   background,
   currentPadding,
 }: CodeEditorProps) {
-  const [width, setWidth] = useState(1000);
+  const [width, setWidth] = useState(700);
   const [height, setHeight] = useState<number | null>(500);
+  const [title, setTile] = useState("Untitled-1");
+  const [code, setCode] = useState(initialCode);
+
+  const handleCodeChange = (newCode: string) => {
+    setCode(newCode);
+  };
 
   // @ts-ignore
   const handleResize = (event, direction, ref, pos) => {
     const newHeight = ref.style.height;
-    setHeight(parseInt(newHeight));
+    setHeight(parseInt(newHeight, 10));
   };
 
   const updateSize = () => {
-    setHeight(window.innerWidth);
+    setWidth(window.innerWidth);
   };
 
   useEffect(() => {
@@ -73,6 +80,7 @@ function CodeEditor({
       className="resize-container relative"
       style={{
         background: background,
+        borderRadius: "4px",
       }}
     >
       <div>
@@ -93,8 +101,10 @@ function CodeEditor({
             {/* input */}
             <div className="input-control w-full">
               <input
+                value={title}
+                onChange={(e) => setTile(e.target.value)}
                 type="text"
-                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-medium text-center bg-transparent"
+                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-normal text-sm text-center bg-transparent"
               />
             </div>
 
@@ -104,13 +114,14 @@ function CodeEditor({
             </div>
           </div>
           <AceEditor
-            value="function() { return 'Hello World'; }"
+            value={code}
             name="UNIQUE_ID_OF_DIV"
             fontSize={16}
             theme={theme.toLowerCase()}
             mode={language.toLowerCase()}
             wrapEnabled={true}
             showGutter={false}
+            height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
             showPrintMargin={false}
             highlightActiveLine={false}
             editorProps={{ $blockScrolling: true }}
