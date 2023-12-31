@@ -8,13 +8,21 @@ body {
 }
 
 .code-title {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
   /* border: 2px solid rgba(249, 249, 249, 0.08); */
 
   border-bottom: 2px solid rgba(249, 249, 249, 0.08);
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0 0 1px var(--frame-highlight-border),
+    0 0 0 1.5px var(--frame-shadow-border), 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+
+  --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
+  --frame-shadow-border: rgba(0, 0, 0, 0.8);
 }
 
 .ace-editor-container {
@@ -27,9 +35,18 @@ body {
 
 .ace_editor {
   background-color: rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+  /* box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2); */
+
+  box-shadow: 0 0 0 1px var(--frame-highlight-border),
+    0 0 0 1.5px var(--frame-shadow-border), 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+
+  --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
+  --frame-shadow-border: rgba(0, 0, 0, 0.8);
 
   /* border: 2px solid rgba(249, 249, 249, 0.08); */
   border-top: none;
@@ -47,6 +64,14 @@ body {
 
 .ace_scroller {
   width: 100% !important;
+  /* box-shadow: 0 0 0 1px var(--frame-highlight-border),
+    0 0 0 1.5px var(--frame-shadow-border), 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12) !important;
+
+  --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
+  --frame-shadow-border: rgba(0, 0, 0, 0.8); */
 }
 
 .dropdown-title {
@@ -85,16 +110,20 @@ body {
   box-sizing: border-box;
 }
 
-/* .dropdown-item {
-  width: 100%;
-  padding: 1px 4px 1px 4px;
-} */
+.dropdown-item {
+  font-size: 0.9rem;
+}
 
 .dropdown-item:hover {
   background-color: #323235; /* Change this to your preferred color */
   border-radius: 5px; /* Optional: to give the box rounded corners */
   box-sizing: border-box;
   width: 100%;
+}
+
+.theme-selector-dropdown-item:hover {
+  border: 2px solid #ffffff;
+  border-radius: 100%;
 }
 
 .chevron {

@@ -20,7 +20,7 @@ function PaddingSelector({
 
   return (
     <div>
-      <p className="py-[5px] text-sm font-medium">Padding Selector</p>
+      <p className="py-[5px] text-sm font-medium">Padding</p>
       <div className="flex gap-3">
         {paddings.map((padding, index) => {
           return (
