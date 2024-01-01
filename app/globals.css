@@ -25,6 +25,10 @@ body {
   --frame-shadow-border: rgba(0, 0, 0, 0.8);
 }
 
+.code-block {
+  transition: padding 0.3s ease;
+}
+
 .ace-editor-container {
   width: 100% !important;
 }
@@ -60,18 +64,13 @@ body {
   width: 100% !important;
   top: 12px !important;
   left: 12px !important;
+  font-size: 15px !important;
+  font-family: "Roboto Mono", "JetBrains Mono", monospace !important;
+  font-weight: 400 !important;
 }
 
 .ace_scroller {
   width: 100% !important;
-  /* box-shadow: 0 0 0 1px var(--frame-highlight-border),
-    0 0 0 1.5px var(--frame-shadow-border), 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12) !important;
-
-  --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
-  --frame-shadow-border: rgba(0, 0, 0, 0.8); */
 }
 
 .dropdown-title {
@@ -88,6 +87,8 @@ body {
 }
 
 .padding-selected {
+  background-color: #2f3031;
+  color: #f4f4f4;
   border-radius: 5px;
   border: 1px solid rgba(249, 249, 249, 0.08);
 }
@@ -115,10 +116,16 @@ body {
 }
 
 .dropdown-item:hover {
-  background-color: #323235; /* Change this to your preferred color */
+  background-color: #232526; /* Change this to your preferred color */
   border-radius: 5px; /* Optional: to give the box rounded corners */
   box-sizing: border-box;
   width: 100%;
+}
+
+.selected-item {
+  background-color: #2f3031;
+  border-radius: 5px;
+  color: #f4f4f4;
 }
 
 .theme-selector-dropdown-item:hover {

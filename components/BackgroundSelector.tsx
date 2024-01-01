@@ -50,9 +50,9 @@ function BackgroundSelector({
     >
       <p className="py-[5px] text-sm font-medium">Theme</p>
 
-      <div className="dropdown-title w-[62px]">
+      <div className="dropdown-title w-[60px]">
         <div
-          className="rounded-full w-5 h-5"
+          className="rounded-full w-4 h-4"
           style={{
             background: background,
           }}
@@ -63,17 +63,24 @@ function BackgroundSelector({
       </div>
 
       {showDropdown && (
-        <div className="dropdown-menu top-[74px] w-[62px] rounded-full flex flex-col gap-2 p-2 justify-center items-center">
+        <div className="dropdown-menu top-[74px] w-[124px] rounded-full flex flex-col gap-1 p-1">
           {backgrounds.map((bg, index) => {
             return (
               <div
                 key={index}
-                className="theme-selector-dropdown-item rounded-full h-5 w-5"
-                style={{
-                  background: bg.color,
-                }}
+                className={`dropdown-item flex items-center justify-start gap-2 px-1.5 py-0.5 ${
+                  background === bg.color && "selected-item"
+                }`}
                 onClick={() => handleBackgroundChange(bg.color)}
-              ></div>
+              >
+                <div
+                  className="theme-selector-dropdown-item rounded-full h-4 w-4"
+                  style={{
+                    background: bg.color,
+                  }}
+                ></div>
+                <button>{bg.name}</button>
+              </div>
             );
           })}
         </div>

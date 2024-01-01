@@ -65,9 +65,11 @@ function LanguageSelector({
         <div className="dropdown-menu w-[120px] top-[94px] p-1">
           {languages.map((lang, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="py-0.5">
                 <button
-                  className="dropdown-item capitalize text-left w-full px-1.5 py-0.5"
+                  className={`dropdown-item capitalize text-left w-full px-1.5 py-0.5 ${
+                    language === lang.name && "selected-item"
+                  }`}
                   onClick={() => handleLanguageChange(lang.name)}
                 >
                   {lang.name}

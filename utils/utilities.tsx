@@ -25,7 +25,7 @@ export const backgrounds = [
   },
   {
     color: "linear-gradient(354deg,#ff75b5,#ffb86c)",
-    name: "Sunset Bliss",
+    name: "Sunset",
   },
   {
     color: "linear-gradient(140deg, rgb(255, 207, 115), rgb(255, 122, 47))",
@@ -42,10 +42,6 @@ export const backgrounds = [
   {
     color: "#ffff",
     name: "Noir",
-  },
-  {
-    color: "linear-gradient(337deg,#654ea3,#da98b4)",
-    name: "Alabaster",
   },
   {
     color: "linear-gradient(140deg, rgb(165, 142, 251), rgb(233, 191, 248))",

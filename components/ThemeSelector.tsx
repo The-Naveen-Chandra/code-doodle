@@ -50,14 +50,16 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
 
       {showDropdown && (
         <div className="dropdown-menu w-[140px] top-[94px] p-1">
-          {themes.map((theme, index) => {
+          {themes.map((theming, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="py-0.5">
                 <button
-                  className="dropdown-item capitalize text-left w-full px-1.5 py-0.5"
-                  onClick={() => handleThemeChange(theme)}
+                  className={`dropdown-item capitalize text-left w-full px-1.5 py-0.5 ${
+                    theme === theming && "selected-item"
+                  }`}
+                  onClick={() => handleThemeChange(theming)}
                 >
-                  {theme}
+                  {theming}
                 </button>
               </div>
             );

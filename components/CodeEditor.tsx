@@ -116,7 +116,7 @@ function CodeEditor({
           <AceEditor
             value={code}
             name="UNIQUE_ID_OF_DIV"
-            fontSize={16}
+            fontSize={14}
             theme={theme.toLowerCase()}
             mode={language.toLowerCase()}
             wrapEnabled={true}
