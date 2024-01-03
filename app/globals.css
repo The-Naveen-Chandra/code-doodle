@@ -23,6 +23,8 @@ body {
 
   --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
   --frame-shadow-border: rgba(0, 0, 0, 0.8);
+
+  clip-path: inset(-100px -100px 0px -100px);
 }
 
 .code-block {
@@ -52,8 +54,10 @@ body {
   --frame-highlight-border: hsla(0, 0%, 100%, 0.3);
   --frame-shadow-border: rgba(0, 0, 0, 0.8);
 
+  clip-path: inset(0px -100px -100px -100px);
+
+  /* box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2); */
   /* border: 2px solid rgba(249, 249, 249, 0.08); */
-  border-top: none;
 
   font-weight: 500 !important;
   font-size: 17px !important;

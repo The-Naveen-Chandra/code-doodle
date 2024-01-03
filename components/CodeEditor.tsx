@@ -23,8 +23,6 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-tomorrow";
 
 import Image from "next/image";
-import ThemeSelector from "./ThemeSelector";
-import BackgroundSelector from "./BackgroundSelector";
 import { initialCode } from "@/utils/utilities";
 
 interface CodeEditorProps {
@@ -104,7 +102,7 @@ function CodeEditor({
                 value={title}
                 onChange={(e) => setTile(e.target.value)}
                 type="text"
-                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-normal text-sm text-center bg-transparent"
+                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-medium text-sm text-center bg-transparent"
               />
             </div>
 
@@ -121,11 +119,15 @@ function CodeEditor({
             mode={language.toLowerCase()}
             wrapEnabled={true}
             showGutter={false}
-            height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
+            // height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
             showPrintMargin={false}
             highlightActiveLine={false}
             editorProps={{ $blockScrolling: true }}
             className="ace-editor-container"
+            style={{
+              transition: "height 0.3s ease",
+              height: `calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`,
+            }}
           />
         </div>
       </div>
