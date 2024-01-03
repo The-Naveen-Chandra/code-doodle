@@ -102,6 +102,8 @@ body {
   border-radius: 5px; /* Optional: to give the box rounded corners */
   box-sizing: border-box;
   width: 100%;
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .dropdown-menu {
