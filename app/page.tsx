@@ -9,6 +9,8 @@ import LanguageSelector from "@/components/LanguageSelector";
 import ThemeSelector from "@/components/ThemeSelector";
 import BackgroundSelector from "@/components/BackgroundSelector";
 import PaddingSelector from "@/components/PaddingSelector";
+import { Share } from "lucide-react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [language, setLanguage] = useState(languages[0].name);
@@ -43,6 +45,14 @@ export default function Home() {
           currentPadding={currentPadding}
           setCurrentPadding={setCurrentPadding}
         />
+
+        {/* Export button */}
+        <div className="export-btn self-center ml-auto">
+          <button className="flex items-center justify-center gap-2 py-2 px-3 bg-blue-400 rounded-md text-sm text-blue-400 font-medium bg-opacity-10 hover:bg-opacity-50 hover:text-slate-50 ease-in-out transition-all duration-300">
+            Export
+            <Share className="h-4 w-4" />
+          </button>
+        </div>
       </header>
 
       <div className="code-editor-ref mt-[14rem]">
@@ -54,6 +64,8 @@ export default function Home() {
           currentPadding={currentPadding}
         />
       </div>
+
+      <Footer />
     </main>
   );
 }
