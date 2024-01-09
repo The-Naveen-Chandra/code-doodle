@@ -53,7 +53,7 @@ function LanguageSelector({
 
   return (
     <div ref={dropdownRef} onClick={toggleDropdown}>
-      <p className="py-[5px] text-sm font-medium">Language</p>
+      <p className="pb-[5px] text-xs font-semibold">Language</p>
       <div className="dropdown-title capitalize w-[120px]">
         {language}
         <div className={`chevron ${showDropdown ? "up" : "down"}`}>
@@ -62,10 +62,10 @@ function LanguageSelector({
       </div>
 
       {showDropdown && (
-        <div className="dropdown-menu w-[120px] top-[94px] p-1">
+        <div className="dropdown-menu w-[120px] top-[94px]  flex flex-col gap-1 p-1">
           {languages.map((lang, index) => {
             return (
-              <div key={index} className="py-0.5">
+              <div key={index}>
                 <button
                   className={`dropdown-item capitalize text-left w-full px-1.5 py-0.5 ${
                     language === lang.name && "selected-item"

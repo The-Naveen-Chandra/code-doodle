@@ -20,14 +20,14 @@ function PaddingSelector({
 
   return (
     <div>
-      <p className="py-[5px] text-sm font-medium">Padding</p>
-      <div className="flex gap-3">
+      <p className="pb-[5px] text-xs font-semibold">Padding</p>
+      <div className="flex gap-2">
         {paddings.map((padding, index) => {
           return (
             <div key={index} className="padding-items">
               <button
                 onClick={() => handleChangePadding(padding)}
-                className={`h-[37px] flex items-center justify-center text-sm px-2
+                className={`h-[37px] flex items-center justify-center text-[13px] px-2
                 ${currentPadding === padding && "padding-selected"}`}
               >
                 {padding}

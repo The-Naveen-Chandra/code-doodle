@@ -40,8 +40,8 @@ function CodeEditor({
   background,
   currentPadding,
 }: CodeEditorProps) {
-  const [width, setWidth] = useState(700);
-  const [height, setHeight] = useState<number | null>(500);
+  const [width, setWidth] = useState(520);
+  const [height, setHeight] = useState<number | null>(340);
   const [title, setTile] = useState("Untitled-1");
   const [code, setCode] = useState(initialCode);
 
@@ -67,12 +67,12 @@ function CodeEditor({
 
   return (
     <Resizable
-      minHeight={466}
-      minWidth={510}
+      minHeight={340}
+      minWidth={520}
       maxWidth={1000}
       defaultSize={{
         width: width,
-        height: height || 500,
+        height: height || 340,
       }}
       onResize={handleResize}
       className="resize-container relative"
@@ -124,6 +124,7 @@ function CodeEditor({
             highlightActiveLine={false}
             editorProps={{ $blockScrolling: true }}
             className="ace-editor-container"
+            onChange={handleCodeChange}
             style={{
               transition: "height 0.3s ease",
               height: `calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`,

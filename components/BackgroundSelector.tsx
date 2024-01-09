@@ -48,7 +48,7 @@ function BackgroundSelector({
       onClick={toggleDropdown}
       className="bg-selector relative"
     >
-      <p className="py-[5px] text-sm font-medium">Theme</p>
+      <p className="pb-[5px] text-xs font-semibold">Theme</p>
 
       <div className="dropdown-title w-[60px]">
         <div

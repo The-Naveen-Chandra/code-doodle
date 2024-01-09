@@ -39,7 +39,7 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
 
   return (
     <div ref={dropdownRef} className="theme-selector" onClick={toggleDropdown}>
-      <p className="py-[5px] text-sm font-medium">Code Theme</p>
+      <p className="pb-[5px] text-xs font-semibold">Code Theme</p>
 
       <div className="dropdown-title capitalize w-[140px]">
         {theme}
@@ -49,10 +49,10 @@ function ThemeSelector({ theme, setTheme }: ThemeSelectorProps) {
       </div>
 
       {showDropdown && (
-        <div className="dropdown-menu w-[140px] top-[94px] p-1">
+        <div className="dropdown-menu w-[140px] top-[94px] flex flex-col gap-1 p-1">
           {themes.map((theming, index) => {
             return (
-              <div key={index} className="py-0.5">
+              <div key={index}>
                 <button
                   className={`dropdown-item capitalize text-left w-full px-1.5 py-0.5 ${
                     theme === theming && "selected-item"
