@@ -99,10 +99,13 @@ function CodeEditor({
             {/* input */}
             <div className="input-control w-full">
               <input
+                type="text"
                 value={title}
                 onChange={(e) => setTile(e.target.value)}
-                type="text"
-                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-medium text-sm text-center bg-transparent"
+                className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium text-sm text-center bg-transparent"
+                style={{
+                  lineHeight: "1.8rem",
+                }}
               />
             </div>
 
@@ -119,7 +122,6 @@ function CodeEditor({
             mode={language.toLowerCase()}
             wrapEnabled={true}
             showGutter={false}
-            // height={`calc(${height}px - ${currentPadding} - ${currentPadding} - 52px)`}
             showPrintMargin={false}
             highlightActiveLine={false}
             editorProps={{ $blockScrolling: true }}
