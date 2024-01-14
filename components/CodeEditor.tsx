@@ -78,7 +78,6 @@ function CodeEditor({
       className="resize-container relative"
       style={{
         background: background,
-        borderRadius: "4px",
       }}
     >
       <div>
@@ -102,7 +101,7 @@ function CodeEditor({
                 type="text"
                 value={title}
                 onChange={(e) => setTile(e.target.value)}
-                className="w-full text-[hsla(0,0%,100%,.6)]  outline-none font-medium text-sm text-center bg-transparent"
+                className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-semibold text-xs text-center bg-transparent"
                 style={{
                   lineHeight: "1.8rem",
                 }}

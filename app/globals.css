@@ -37,6 +37,7 @@ body {
   border-bottom: 2px solid rgba(249, 249, 249, 0.08);
 
   /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); */
+
   box-shadow: 0 0 0 1px var(--frame-highlight-border),
     0 0 0 1.5px var(--frame-shadow-border), 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
