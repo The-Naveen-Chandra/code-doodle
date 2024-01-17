@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { Resizable } from "re-resizable";
 import AceEditor from "react-ace";
 
@@ -23,7 +23,7 @@ import "ace-builds/src-noconflict/theme-twilight";
 import "ace-builds/src-noconflict/theme-tomorrow";
 
 import Image from "next/image";
-import { initialCode } from "@/utils/utilities";
+import { getExtension, initialCode } from "@/utils/utilities";
 
 interface CodeEditorProps {
   language: string;
@@ -42,11 +42,23 @@ function CodeEditor({
 }: CodeEditorProps) {
   const [width, setWidth] = useState(520);
   const [height, setHeight] = useState<number | null>(340);
-  const [title, setTile] = useState("Untitled-1");
+  const [title, setTitle] = useState("Untitled-1");
   const [code, setCode] = useState(initialCode);
+  const [extension, setExtension] = useState(".js");
+
+  useEffect(() => {
+    // Update the extension when the language changes
+    setExtension(getExtension(language));
+  }, [language]);
 
   const handleCodeChange = (newCode: string) => {
     setCode(newCode);
+  };
+
+  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    // Extract the title without the extension
+    const newTitle = e.target.value.split(".")[0];
+    setTitle(newTitle);
   };
 
   // @ts-ignore
@@ -123,8 +135,8 @@ function CodeEditor({
             <div className="input-control w-full">
               <input
                 type="text"
-                value={title}
-                onChange={(e) => setTile(e.target.value)}
+                value={`${title}${extension}`}
+                onChange={(e) => handleTitleChange(e)}
                 className="w-full text-[hsla(0,0%,100%,.6)] outline-none font-semibold text-xs text-center bg-transparent"
                 style={{
                   lineHeight: "1.8rem",

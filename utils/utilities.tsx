@@ -1,12 +1,33 @@
 export const languages = [
-  { name: "javascript", icon: "icons/javascript.svg" },
-  { name: "typescript", icon: "icons/typescript.svg" },
-  { name: "python", icon: "icons/python.svg" },
-  { name: "java", icon: "icons/java.svg" },
-  { name: "cpp", icon: "icons/c_cpp.svg" },
-  { name: "html", icon: "icons/html.svg" },
-  { name: "css", icon: "icons/css.svg" },
+  { name: "Javascript", icon: "icons/javascript.svg" },
+  { name: "Typescript", icon: "icons/typescript.svg" },
+  { name: "Python", icon: "icons/python.svg" },
+  { name: "Java", icon: "icons/java.svg" },
+  { name: "Cpp", icon: "icons/c_cpp.svg" },
+  { name: "HTML", icon: "icons/html.svg" },
+  { name: "CSS", icon: "icons/css.svg" },
 ];
+
+export const getExtension = (language: string) => {
+  switch (language) {
+    case "JavaScript":
+      return ".js";
+    case "Typescript":
+      return ".ts";
+    case "Python":
+      return ".py";
+    case "Java":
+      return ".java";
+    case "Cpp":
+      return ".cpp";
+    case "HTML":
+      return ".html";
+    case "CSS":
+      return ".css";
+    default:
+      return ".js";
+  }
+};
 
 export const themes = [
   "monokai",
