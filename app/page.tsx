@@ -26,6 +26,20 @@ export default function Home() {
     const editorElement = editorRef.current;
 
     if (editorElement) {
+      // hide elements
+      const handleElements = document.querySelectorAll(".handle") as any;
+      const cursorElement = document.querySelector(".ace_cursor") as any;
+      const codeTitle = document.querySelector(".code-title") as any;
+      const codeEditor = document.querySelector(".ace_editor") as any;
+
+      handleElements.forEach((element: any) => {
+        // element.style.display = "none";
+        element.classList.add("hidden");
+      });
+      cursorElement.style.display = "none";
+      codeTitle.style.boxShadow = "none";
+      codeEditor.style.boxShadow = "none";
+
       const canvas = await html2canvas(editorElement);
       const image = canvas
         .toDataURL("image/png")
@@ -35,6 +49,15 @@ export default function Home() {
       link.download = "code-doodle.png";
       link.href = image;
       link.click();
+
+      // show elements
+      handleElements.forEach((element: any) => {
+        // element.style.display = "block";
+        element.classList.remove("hidden");
+      });
+      cursorElement.style.display = "block";
+      codeTitle.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.2)";
+      codeEditor.style.boxShadow = "2px 3px 10px rgba(0, 0, 0, 0.2)";
     }
   };
 

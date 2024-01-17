@@ -87,6 +87,30 @@ function CodeEditor({
             padding: currentPadding,
           }}
         >
+          {/* top circle */}
+          <div
+            className="handle handle-top absolute left-1/2 translate-x-[-50%] top-[-4px] w-2 h-2 
+            rounded-full bg-slate-300 hover:bg-slate-50"
+          ></div>
+
+          {/* bottom circle */}
+          <div
+            className="handle handle-bottom absolute left-1/2 bottom-[-4px] w-2 h-2 
+            rounded-full bg-slate-300 hover:bg-slate-50"
+          ></div>
+
+          {/* left circle */}
+          <div
+            className="handle handle-left absolute top-1/2 left-[-4px] w-2 h-2 
+            rounded-full bg-slate-300 hover:bg-slate-50"
+          ></div>
+
+          {/* right circle */}
+          <div
+            className="handle handle-right absolute top-1/2 right-[-4px] w-2 h-2 
+            rounded-full bg-slate-300 hover:bg-slate-50"
+          ></div>
+
           <div className="code-title h-[52px] px-4 flex items-center justify-between bg-black bg-opacity-80">
             {/* three dots */}
             <div className="dots flex items-center gap-1">
